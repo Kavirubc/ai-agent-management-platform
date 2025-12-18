@@ -16,5 +16,19 @@
  * under the License.
  */
 
-export * from './components';
-export * from './providers';
+import { useContext } from 'react';
+import { NotificationContext } from './NotificationContext';
+
+/**
+ * Hook to access notification functions.
+ * Must be used within a NotificationProvider.
+ */
+export function useNotification() {
+  const context = useContext(NotificationContext);
+
+  if (!context) {
+    throw new Error('useNotification must be used within a NotificationProvider');
+  }
+
+  return context;
+}

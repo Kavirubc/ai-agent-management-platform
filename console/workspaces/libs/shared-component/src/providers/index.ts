@@ -16,5 +16,6 @@
  * under the License.
  */
 
-export * from './components';
-export * from './providers';
+export * from './NotificationContext';
+export * from './NotificationProvider';
+export * from './useNotification';
